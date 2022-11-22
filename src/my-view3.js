@@ -12,6 +12,18 @@ import { LitElement, html } from 'lit';
 import './shared-styles.js';
 
 class MyView3 extends LitElement {
+
+  firstUpdated(changedProperties) {
+    super.firstUpdated(changedProperties);
+
+    var url ="https://jsonplaceholder.typicode.com/todos?_limit=5"
+    fetch(url).then((response) => {
+      return response.json()
+    }).then((data) => {
+      console.log(data)
+    })
+  }
+
  render() {
     return html`
       <style include="shared-styles">
