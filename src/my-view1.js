@@ -19,51 +19,52 @@ class MyView1 extends LitElement {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 <div class="card">
   <div class="container">
-  <form>
-   <div class="field">
+ <form class="form">
+    <div class="field">
     <label class="label">Username</label>
     <div class="control has-icons-left has-icons-right">
-    <input class="input is-medium" type="text" placeholder="Text input" value="username">
+    <input class="input is-medium" type="text" id="username" placeholder="Text input" value="username">
     <span class="icon is-small is-left">
       <i class="fas fa-user"></i>
     </span>
     <span class="icon is-small is-right">
       <i class="fas fa-check"></i>
     </span>
-  </div>
-  <p class="help is-success">This username is available</p>
-</div>
+    </div>
+   <p class="help is-success">This username is available</p>
+   </div>
 
-<div class="field">
-  <label class="label">Email</label>
-  <div class="control has-icons-left has-icons-right">
-    <input class="input is-medium" type="email" placeholder="Email input" value="wilsonochieng718@gmail.com">
-    <span class="icon is-small is-left">
+    <div class="field">
+    <label class="label">Email</label>
+    <div class="control has-icons-left has-icons-right">
+     <input class="input is-medium"  id="email" type="email" placeholder="Email input" value="wilsonochieng718@gmail.com">
+     <span class="icon is-small is-left">
       <i class="fas fa-envelope"></i>
     </span>
     <span class="icon is-small is-right">
       <i class="fas fa-success"></i>
     </span>
+      </div>
   </div>
- </div>
-<div class="field">
-    <label class="label">Phone</label>
+  <div class="field">
+       <label class="label">Phone</label>
     <div class="control has-icons-left has-icons-left ">
-    <input class="input is-medium" type="tel" placeholder="Text input" value="+254702430127">
+    <input class="input is-medium" id="phone" type="tel" placeholder="Text input" value="+254702430127">
     <span class="icon is-small is-left">
       <i class="fa fa-phone"></i>
     </span>
     <span class="icon is-small is-right">
       <i class="fas fa-check"></i>
     </span>
-  </div>
-</div>
+    </div>
+   </div>
 
-<div class="field is-grouped">
+    <div class="field is-grouped">
   <div class="control">
     <button class="button is-link" onClick ="showAlert()" >Submit</button>
   </div>
-</div>
+   </div>
+   
 
         </form>
       </div>
