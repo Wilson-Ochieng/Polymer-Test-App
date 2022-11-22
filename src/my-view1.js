@@ -13,20 +13,8 @@ import './shared-styles.js';
 
 class MyView1 extends LitElement {
  render() {
-
-
-
-
    return html`
 
-
-      <style include="shared-styles">
-        :host {
-          display: block;
-
-          padding: 10px;
-        }
-      </style>
   <div class="container">
    <h3>Input Form</h3>
        <label for ="username">Username:</label><br>
@@ -35,7 +23,8 @@ class MyView1 extends LitElement {
        <input type ="text" id="email" name="email" value="email"><br>
        <label for ="phone  number">Phone No:</label><br>
        <input type ="phone" id="phone" name="phone" value="0700000000"><br>
-        <input type ="submit" value="Submit Form" onClick ="alertFunction()"></button>
+       <input type ="submit" value="Submit Form" onClick ="showAlert() "></button>
+       
         </form>
       </div>
     `;
