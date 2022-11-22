@@ -37,7 +37,7 @@ class MyView1 extends LitElement {
 <div class="field">
   <label class="label">Email</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input is-medium" type="email" placeholder="Email input" value="kim@gmail.com">
+    <input class="input is-medium" type="email" placeholder="Email input" value="wilsonochieng718@gmail.com">
     <span class="icon is-small is-left">
       <i class="fas fa-envelope"></i>
     </span>
