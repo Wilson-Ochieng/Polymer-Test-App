@@ -8,23 +8,63 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-import { LitElement, html } from 'lit';
+import { LitElement, css, html } from 'lit';
 import './shared-styles.js';
 
-class MyView1 extends LitElement {
- render() {
-   return html`
 
+class MyView1 extends LitElement {
+  render() {
+    return html`
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<div class="card">
   <div class="container">
-   <h3>Input Form</h3>
-       <label for ="username">Username:</label><br>
-       <input type ="text" id="username" name="username" value="username"><br>
-       <label for ="email">Email:</label><br>
-       <input type ="text" id="email" name="email" value="email"><br>
-       <label for ="phone  number">Phone No:</label><br>
-       <input type ="phone" id="phone" name="phone" value="0700000000"><br>
-       <input type ="submit" value="Submit Form" onClick ="showAlert() "></button>
-       
+  <form>
+   <div class="field">
+    <label class="label">Username</label>
+    <div class="control has-icons-left has-icons-right">
+    <input class="input is-medium" type="text" placeholder="Text input" value="username">
+    <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+  </div>
+  <p class="help is-success">This username is available</p>
+</div>
+
+<div class="field">
+  <label class="label">Email</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input is-medium" type="email" placeholder="Email input" value="kim@gmail.com">
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-success"></i>
+    </span>
+  </div>
+ </div>
+<div class="field">
+    <label class="label">Phone</label>
+    <div class="control has-icons-left has-icons-left ">
+    <input class="input is-medium" type="tel" placeholder="Text input" value="+254702430127">
+    <span class="icon is-small is-left">
+      <i class="fa fa-phone"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+  </div>
+</div>
+
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link" onClick ="showAlert()" >Submit</button>
+  </div>
+</div>
+
         </form>
       </div>
     `;
