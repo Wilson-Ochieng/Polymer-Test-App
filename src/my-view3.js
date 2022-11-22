@@ -31,14 +31,8 @@ class MyView3 extends LitElement {
       });
   }
   render() {
-    if (!this.data) {
-      return html`
-                <h4>Loading...</h4>
-            `;
-    }
-    return html`
-            <h4>Done</h4>
-        `;
+    return html`<p>${this.data}</p>`;
+    
   }
 }
 
