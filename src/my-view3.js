@@ -18,43 +18,27 @@ class MyView3 extends LitElement {
 
     var url ="https://jsonplaceholder.typicode.com/todos?_limit=5"
     fetch(url).then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      };
       return response.json()
     }).then((data) => {
-      console.log(data)
+      this.data = data;
+      console.log('Success:', data);
     })
-
-
-   const Dictionary = {
-      '34': 'thirty-four', '90': 'ninety',
-      '91': 'ninety-one','21': 'twenty-one',
-      '61': 'sixty-one', '9': 'nine',
-      '2': 'two', '6': 'six', '3': 'three',
-      '8': 'eight', '80': 'eighty', '81': 'eighty-one',
-      'Ninety-Nine': '99', 'nine-hundred': '900'
-    }
-    Dictionary.sort();
-    Dictionary.reverse();
-
-
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
-
- render() {
+  render() {
+    if (!this.data) {
+      return html`
+                <h4>Loading...</h4>
+            `;
+    }
     return html`
-      <style include="shared-styles">
-        :host {
-          display: block;
-
-          padding: 10px;
-        }
-      </style>
-
-      <div class="card">
-        <div class="circle">3</div>
-        <h1>View Three</h1>
-        <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-        <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-      </div>
-    `;
+            <h4>Done</h4>
+        `;
   }
 }
 
