@@ -154,7 +154,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         alert("Deleted!");
       }
 
-      let Dictionary = {
+      let dictionary = {
         34: "thirty-four",
         90: "ninety",
         91: "ninety-one",
@@ -170,10 +170,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         "Ninety-Nine": "99",
         "nine-hundred": "900",
       };
-      console.log("Unsorted Dictionary",Dictionary);
+      console.log("Sorted Dictionary", dictionary);
 
-      Dictionary.sort((a,b)=> a-b);
-      console.log("Sorted Dictionary",Dictionary)
+      dictionary.sort(function (a, b) {
+        return parseFloat(a) - parseFloat(b);
+      });
 
       var nameInput = document.getElementById("username");
       var emailInput = document.getElementById("email");
