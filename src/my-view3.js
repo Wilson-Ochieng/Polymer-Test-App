@@ -25,7 +25,7 @@ export class MyView3 extends LitElement {
     this.todos = []
   }
 
-
+  
   firstUpdated(changedProperties) {
     super.firstUpdated(changedProperties);
     this.fetchData();
@@ -64,17 +64,18 @@ export class MyView3 extends LitElement {
           <h1>{{item.completed}}</h1>
         </div>
       </template>
-     <p>Title:${this.data}</p>
-     <p>Completed:${this.data}</p>
+     <p>Title:${this.todos}</p>
+     <p>Completed:${this.todos}</p>
      
      <div class="card">
       <div class="container">
         <form class="form">
       <textarea class="textarea is-primary" placeholder="Primary textarea"></textarea>
+
       </form>
       </div>
       </div>`;
-
+    
   }
 }
 
