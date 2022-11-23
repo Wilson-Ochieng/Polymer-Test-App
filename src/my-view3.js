@@ -9,6 +9,7 @@
  */
 
 import { LitElement, html } from 'lit';
+import { map } from 'lit/directives/map.js';
 import './shared-styles.js';
 
 export class MyView3 extends LitElement {
@@ -16,13 +17,15 @@ export class MyView3 extends LitElement {
 
   static get properties() {
     return {
-      data: { type: Array },
+      todos: { state: true },
+      things: { state: true }
     };
   }
 
   constructor() {
     super()
-    this.todos = []
+    this.todos = [];
+   
   }
 
 
@@ -51,13 +54,22 @@ export class MyView3 extends LitElement {
 
 
     return html`
-   
-     <p>Title:${this.todos.title}</p>
-     <p>Completed:${this.todos.completed}</p>
+    <p>MyToDos</p>
+     ${map(
+       this.todos,
+       (todo, index) => html`
+            <li>
+              ${todo}
+              <button @click=${() => this._deleteThing(index)}>Delete</button>
+            </li>
+          `
+     )}
+      </ul>
+    `;
+  }
 
-      
-      </div>`;
-
+  _deleteThing(index) {
+    this.todos = this.todos.filter((_, i) => i !== index);
   }
 }
 
