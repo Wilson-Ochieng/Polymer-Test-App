@@ -66,11 +66,6 @@ export class MyView3 extends LitElement {
       </template>
      <p>Title:${this.todos}</p>
      <p>Completed:${this.todos}</p>
-     
-     <div class="card">
-      <div class="container">
-        <form class="form">
-      <textarea class="textarea is-primary" placeholder="Primary textarea"></textarea>
 
       </form>
       </div>
