@@ -51,26 +51,11 @@ export class MyView3 extends LitElement {
 
 
     return html`
-    <style include="shared-styles">
-      :host {
-        display: block;
-      padding: 10px;
-        }
-    </style>
-    <template is="dom-repeat" items="{{mytodos}}">  
-        <div class="card">
-          <div class="circle">{{item.userId}}</div>
-          <h1>{{item.title}}</h1>
-          <h1>{{item.completed}}</h1>
-        </div>
-      </template>
-     <p>Title:${this.todos}</p>
-     <p>Completed:${this.todos}</p>
-     
-    
+   
+     <p>Title:${this.todos.title}</p>
+     <p>Completed:${this.todos.completed}</p>
 
-      </form>
-      </div>
+      
       </div>`;
 
   }

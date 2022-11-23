@@ -19,7 +19,7 @@ export class MyView1 extends LitElement {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 <div class="card">
   <div class="container">
- <form class="form">
+ <form class id="form">
     <div class="field">
     <label class="label">Username</label>
     <div class="control has-icons-left has-icons-right">
@@ -61,7 +61,7 @@ export class MyView1 extends LitElement {
 
     <div class="field is-grouped">
   <div class="control">
-    <button class="button is-link" onClick ="showAlert()" >Submit</button>
+    <button class="button is-link"  id="submit" onClick ="showAlert()" >Submit</button>
   </div>
    </div>
    

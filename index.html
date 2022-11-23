@@ -27,7 +27,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      
     />
     <!--
       The `<base>` tag below is present to support two advanced deployment options:
@@ -155,7 +154,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         alert("Deleted!");
       }
 
-      let dictionary = {
+      const dictionary = {
         34: "thirty-four",
         90: "ninety",
         91: "ninety-one",
@@ -171,11 +170,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         "Ninety-Nine": "99",
         "nine-hundred": "900",
       };
-      console.log("Sorted Dictionary", dictionary);
+      const sorted = Object.keys(dictionary)
+        .sort()
+        .reduce((obj, key) => {
+          obj[key] = dictionary[key];
+          return obj;
+        }, {});
 
-      dictionary.sort(function (a, b) {
-        return parseFloat(a) - parseFloat(b);
-      });
+      console.log("sorted", sorted);
 
       var nameInput = document.getElementById("username");
       var emailInput = document.getElementById("email");
@@ -183,7 +185,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       document
         .querySelector("form.form")
-        .addEventListener("submit", function (e) {
+        .addEventListener("submit", function showAlert(e) {
           //prevent the normal submission of the form
           e.preventDefault();
 
@@ -192,7 +194,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           console.log(phoneInput.value);
         });
     </script>
-    <script src="./node_modules/@webcomponents/shadycss/apply-shim.min.js"></script>
     <!-- Built with love using Polymer Starter Kit -->
   </body>
 </html>
