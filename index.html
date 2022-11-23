@@ -154,20 +154,34 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         alert("Deleted!");
       }
 
+      let Dictionary = {
+        34: "thirty-four",
+        90: "ninety",
+        91: "ninety-one",
+        21: "twenty-one",
+        61: "sixty-one",
+        9: "nine",
+        2: "two",
+        6: "six",
+        3: "three",
+        8: "eight",
+        80: "eighty",
+        81: "eighty-one",
+        "Ninety-Nine": "99",
+        "nine-hundred": "900",
+      };
+      console.log("Unsorted Dictionary",Dictionary);
 
-      function displayToDo(){
-      const cocktail = data.[0];
-      const cocktailDiv = document.getElementById("cocktail");
-  
-} 
-
-      }
+      Dictionary.sort((a,b)=> a-b);
+      console.log("Sorted Dictionary",Dictionary)
 
       var nameInput = document.getElementById("username");
       var emailInput = document.getElementById("email");
       var phoneInput = document.getElementById("phone");
 
-      document.querySelector("form.pure-form").addEventListener("submit", function (e) {
+      document
+        .querySelector("form.form")
+        .addEventListener("submit", function (e) {
           //prevent the normal submission of the form
           e.preventDefault();
 

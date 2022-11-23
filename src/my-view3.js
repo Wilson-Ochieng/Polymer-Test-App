@@ -16,34 +16,40 @@ export class MyView3 extends LitElement {
 
   static get properties() {
     return {
-    data: {type: Array},
+      data: { type: Array },
     };
   }
 
+  constructor() {
+    super()
+    this.todos = []
+  }
+
+
   firstUpdated(changedProperties) {
     super.firstUpdated(changedProperties);
-      this.fetchData();
-    }
+    this.fetchData();
+  }
 
-  fetchData(){
+  fetchData() {
     fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
       .then((response) => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      };
-      return response.json()
-    }).then((data) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        };
+        return response.json()
+      }).then((data) => {
 
-      this.mytodos = data;
-      console.log('Success:', data);
-    })
+        this.todos = data;
+        console.log('Success:', data);
+      })
       .catch((error) => {
         console.error('Error:', error);
       });
   }
   render() {
 
-    
+
     return html`
     <style include="shared-styles">
       :host {
@@ -59,8 +65,16 @@ export class MyView3 extends LitElement {
         </div>
       </template>
      <p>Title:${this.data}</p>
-     <p>Completed:${this.data}</p>`;
-    
+     <p>Completed:${this.data}</p>
+     
+     <div class="card">
+      <div class="container">
+        <form class="form">
+      <textarea class="textarea is-primary" placeholder="Primary textarea"></textarea>
+      </form>
+      </div>
+      </div>`;
+
   }
 }
 
