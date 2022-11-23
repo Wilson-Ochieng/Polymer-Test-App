@@ -25,7 +25,7 @@ export class MyView3 extends LitElement {
     this.todos = []
   }
 
-  
+
   firstUpdated(changedProperties) {
     super.firstUpdated(changedProperties);
     this.fetchData();
@@ -66,11 +66,13 @@ export class MyView3 extends LitElement {
       </template>
      <p>Title:${this.todos}</p>
      <p>Completed:${this.todos}</p>
+     
+    
 
       </form>
       </div>
       </div>`;
-    
+
   }
 }
 
