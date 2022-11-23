@@ -11,19 +11,30 @@
 import { LitElement, html } from 'lit';
 import './shared-styles.js';
 
-class MyView3 extends LitElement {
+export class MyView3 extends LitElement {
+
+
+  static get properties() {
+    return {
+    data: {type: Array},
+    };
+  }
 
   firstUpdated(changedProperties) {
     super.firstUpdated(changedProperties);
+      this.fetchData();
+    }
 
-    var url ="https://jsonplaceholder.typicode.com/todos?_limit=5"
-    fetch(url).then((response) => {
+  fetchData(){
+    fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
+      .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       };
       return response.json()
     }).then((data) => {
-      this.data = data;
+
+      this.mytodos = data;
       console.log('Success:', data);
     })
       .catch((error) => {
@@ -31,7 +42,24 @@ class MyView3 extends LitElement {
       });
   }
   render() {
-    return html`<p>${this.data}</p>`;
+
+    
+    return html`
+    <style include="shared-styles">
+      :host {
+        display: block;
+      padding: 10px;
+        }
+    </style>
+    <template is="dom-repeat" items="{{mytodos}}">  
+        <div class="card">
+          <div class="circle">{{item.userId}}</div>
+          <h1>{{item.title}}</h1>
+          <h1>{{item.completed}}</h1>
+        </div>
+      </template>
+     <p>Title:${this.data}</p>
+     <p>Completed:${this.data}</p>`;
     
   }
 }

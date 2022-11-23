@@ -12,7 +12,7 @@ import { LitElement, css, html } from 'lit';
 import './shared-styles.js';
 
 
-class MyView1 extends LitElement {
+export class MyView1 extends LitElement {
   render() {
     return html`
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
